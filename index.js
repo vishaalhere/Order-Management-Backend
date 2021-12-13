@@ -13,6 +13,10 @@ connectToMongo();
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/orders', require('./routes/orders'))
 
+app.get('*', (req,res)=>{
+  res.send("Hello");
+})
+
 app.listen(port, ()=>{
   console.log(`Example app listening at http://localhost:${port}`);
 })
